@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="x-UA-Compatible" content="IE=edge">  
+    <meta name="viewport" content="width=device-width,initial-scaled=1.0">
+    <title> BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+   
+    
+<head>
+<body>  
+    <div>
+        <h2>BMI Calculator</h2>
+        <p class="text">Height</p>
+        <input type="text" id="height">
+        <p id="info">Please enter height[ft]</p>
+        <p class="text">Weight</p>        
+        <input type="text" id="weight">
+        <p id="info">Please enter weight[kg]</p>
+
+        <p class="text">Age</p>
+        <input type="number" id="age">
+        
+           
+
+        <p id="result"></p>
+        <button id="btn" onclick="getbmivalue()">calculate</button>
+        <p class="text"> BMI Value:</p>
+            <input type="number" name="" id="bmivalue" >
+            <button id="btn" onclick="cond()">More info</button>
+        
+        <p id="info">A healthy BMI ranges between 19 and 25.</p>
+        
+
+        
+        
+    </div>
+   
+    <script>
+
+        function getbmivalue(){
+         var weight = document.getElementById('weight').value;
+         var height = document.getElementById('height').value;
+
+         height = height * 12;
+         height = height * 0.025; // height in metere
+
+          var newbmivalue = weight / (Math.pow(height,2));
+
+          newbmivalue = Math.round(newbmivalue);
+
+          document.getElementById('bmivalue').value = newbmivalue;
+          }
+       </script>
+       <script>
+     
+
+        function cond() {
+            var age = document.getElementById("bmivalue").value;
+            window.alert(age)
+            if(age>10 && age<21){
+              window.location.href=("C:/Users/ADMIN/Desktop/Project/11-20.HTML")
+            }
+            else if(age>20 && age<31){
+                window.location.href=("C:/Users/ADMIN/Desktop/Project/21-30.HTML")
+            }
+            else if(age>30 && age<41){
+                window.location.href=("C:/Users/ADMIN/Desktop/Project/31-40.HTML")
+            }
+            else if(age>40){
+                window.location.href=("C:/Users/ADMIN/Desktop/Project/More than 40.HTML")
+            }
+            else {
+              document.write("You Can take regular diet.")
+            }
+        
+        
+        }
+      </script>
+        
+</html>
